@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abdulsalam Mudasiru — Full-Stack Software Engineer</title>
+  <meta name="description" content="Software Engineering Portfolio of Abdulsalam Mudasiru — Full-Stack & Frontend Developer specializing in React, TypeScript, Next.js, PostgreSQL, and Supabase." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            studio: {
+              bg: 'rgb(var(--studio-bg) / <alpha-value>)',
+              surface: 'rgb(var(--studio-surface) / <alpha-value>)',
+              elevated: 'rgb(var(--studio-elevated) / <alpha-value>)',
+              border: 'rgb(var(--studio-border) / <alpha-value>)',
+              accent: 'rgb(var(--studio-accent) / <alpha-value>)',
+              accentHover: 'rgb(var(--studio-accent-hover) / <alpha-value>)',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    try {
+      if (localStorage.getItem('portfolio-theme') === 'light') {
+        document.documentElement.dataset.theme = 'light';
+      }
+    } catch (error) {
+      console.warn('Unable to load the saved theme preference.', error);
+    }
+  </script>
+</head>
+<body class="bg-studio-bg text-zinc-100 font-sans antialiased selection:bg-amber-500/30 selection:text-amber-200">
+
+  <!-- Navigation -->
+  <header class="sticky top-0 z-50 border-b border-studio-border/80 bg-studio-bg/85 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2.5 group">
+        <span class="w-2.5 h-2.5 rounded-full bg-amber-500 group-hover:scale-125 transition-transform"></span>
+        <span class="font-mono text-sm font-semibold tracking-wider text-zinc-100">ABDULSALAM<span class="text-amber-500">.DEV</span></span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400">
+        <a href="#projects" class="hover:text-zinc-100 transition-colors">Projects</a>
+        <a href="#stack" class="hover:text-zinc-100 transition-colors">Tech Stack</a>
+        <a href="#contact" class="hover:text-zinc-100 transition-colors">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="https://github.com/tosvn" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
+           class="hidden sm:inline-flex p-2 rounded-lg text-zinc-400 hover:text-zinc-100 hover:bg-studio-elevated transition-colors">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/abdulsalam-mudasiru-32529531a/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+           class="hidden sm:inline-flex p-2 rounded-lg text-zinc-400 hover:text-zinc-100 hover:bg-studio-elevated transition-colors">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+        </a>
+        <button id="theme-toggle" type="button" aria-label="Switch to light mode" aria-pressed="false"
+                class="p-2 rounded-lg text-zinc-400 hover:text-zinc-100 hover:bg-studio-elevated transition-colors">
+          <svg id="theme-sun-icon" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path stroke-linecap="round" d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/>
+          </svg>
+          <svg id="theme-moon-icon" class="hidden w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5 8.5 8.5 0 1 0 20.5 14.2Z"/>
+          </svg>
+        </button>
+        <a href="#contact" class="ml-1 px-4 py-2 rounded-lg bg-amber-600 hover:bg-amber-500 text-zinc-950 font-semibold text-xs tracking-wide transition-colors">
+          Hire Me
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden border-b border-studio-border/60">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_75%_30%,rgba(217,119,6,0.08),transparent_50%)] pointer-events-none"></div>
+    <div class="max-w-6xl mx-auto px-6 py-20 md:py-28">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Copy -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-studio-elevated border border-studio-border text-xs font-mono text-amber-400">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            Available for Software Engineering Roles
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1]">
+            Abdulsalam <span class="text-zinc-400">Mudasiru</span>
+          </h1>
+
+          <p class="text-lg sm:text-xl font-medium text-amber-400/90">
+            Full-Stack Software Engineer &bull; React, TypeScript &amp; Cloud Databases
+          </p>
+
+          <p class="text-zinc-400 text-base sm:text-lg leading-relaxed max-w-2xl">
+            I design and build resilient, type-safe web applications—from responsive frontend interfaces to authenticated PostgreSQL-backed platforms. Focused on clean architecture, maintainable code, and production-ready deployments.
+          </p>
+
+          <div class="pt-2 flex flex-wrap items-center gap-4">
+            <a href="#projects" class="px-6 py-3 rounded-xl bg-amber-600 hover:bg-amber-500 text-zinc-950 font-semibold text-sm transition-all shadow-lg shadow-amber-900/20">
+              Explore Projects
+            </a>
+            <a href="https://github.com/tosvn" target="_blank" rel="noopener noreferrer"
+               class="px-6 py-3 rounded-xl bg-studio-elevated hover:bg-zinc-800 border border-studio-border text-zinc-200 font-medium text-sm transition-colors flex items-center gap-2">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              GitHub Profile
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Portrait Card (Blended seamlessly with studio dark background) -->
+        <div class="lg:col-span-5 flex justify-center lg:justify-end">
+          <div class="relative group max-w-sm w-full">
+            <div class="absolute -inset-1 rounded-2xl bg-gradient-to-b from-amber-500/25 via-zinc-700/20 to-transparent blur-md opacity-75 group-hover:opacity-100 transition duration-500"></div>
+            <div class="relative rounded-2xl overflow-hidden bg-studio-elevated border border-studio-border shadow-2xl">
+              <img
+                src="assets/profile.png"
+                alt="Abdulsalam Mudasiru Portrait"
+                class="w-full h-auto object-cover object-top block"
+              />
+              <div class="p-4 bg-gradient-to-t from-studio-bg via-studio-bg/95 to-transparent border-t border-studio-border/60 flex items-center justify-between">
+                <div>
+                  <p class="text-xs font-mono text-zinc-400">LOCATION</p>
+                  <p class="text-sm font-medium text-zinc-200">Abuja, Nigeria (Remote Ready)</p>
+                </div>
+                <span class="px-2.5 py-1 rounded-md bg-amber-500/10 border border-amber-500/30 text-amber-400 font-mono text-xs">
+                  4 Live Apps
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-20 md:py-24 max-w-6xl mx-auto px-6">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+      <div>
+        <p class="font-mono text-xs uppercase tracking-widest text-amber-500 mb-2">Selected Engineering Work</p>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Featured Projects</h2>
+      </div>
+
+      <!-- Category Filter -->
+      <div class="inline-flex p-1 rounded-xl bg-studio-surface border border-studio-border self-start" role="tablist">
+        <button data-filter="all" class="filter-btn active px-4 py-1.5 rounded-lg text-xs font-medium transition-colors bg-amber-600 text-zinc-950 font-semibold">
+          All (4)
+        </button>
+        <button data-filter="fullstack" class="filter-btn px-4 py-1.5 rounded-lg text-xs font-medium text-zinc-400 hover:text-zinc-100 transition-colors">
+          Full-Stack
+        </button>
+        <button data-filter="frontend" class="filter-btn px-4 py-1.5 rounded-lg text-xs font-medium text-zinc-400 hover:text-zinc-100 transition-colors">
+          Frontend
+        </button>
+      </div>
+    </div>
+
+    <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+      <!-- Project 1: BookNest -->
+      <article data-category="fullstack" class="project-card group rounded-2xl bg-studio-surface border border-studio-border hover:border-amber-500/50 transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-lg">
+        <div class="p-7 space-y-5">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <span class="inline-block font-mono text-[11px] uppercase tracking-wider text-amber-400 bg-amber-500/10 border border-amber-500/20 px-2.5 py-0.5 rounded-md mb-2">
+                Full-Stack &bull; Relational DB
+              </span>
+              <h3 class="text-2xl font-bold text-white group-hover:text-amber-400 transition-colors">BookNest</h3>
+            </div>
+            <a href="https://library-topaz-five.vercel.app/" target="_blank" rel="noopener noreferrer"
+               class="p-2.5 rounded-xl bg-studio-elevated border border-studio-border text-zinc-300 hover:text-amber-400 hover:border-amber-500/40 transition-colors"
+               title="Open Live Demo">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 3h7v7m0-7L10 14M5 5v14h14v-7"/></svg>
+            </a>
+          </div>
+
+          <p class="text-zinc-400 text-sm leading-relaxed">
+            A comprehensive library management system built to track catalog inventory, member records, and book lending workflows in real time.
+          </p>
+
+          <ul class="space-y-2 text-xs text-zinc-300">
+            <li class="flex items-center gap-2">
+              <span class="text-amber-500">&#9656;</span> Tracks real-time book availability and active library members
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-amber-500">&#9656;</span> Manages peer-to-peer book lending states with PostgreSQL persistence
+            </li>
+          </ul>
+        </div>
+
+        <div class="px-7 py-5 bg-studio-elevated/60 border-t border-studio-border flex flex-wrap items-center justify-between gap-4">
+          <div class="flex flex-wrap gap-1.5 font-mono text-[11px]">
+            <span class="px-2.5 py-1 rounded bg-studio-bg border border-studio-border text-zinc-300">React</span>
+            <span class="px-2.5 py-1 rounded bg-studio-bg border border-studio-border text-zinc-300">TypeScript</span>
+            <span class="px-2.5 py-1 rounded bg-studio-bg border border-studio-border text-zinc-300">PostgreSQL</span>
+            <span class="px-2.5 py-1 rounded bg-studio-bg border border-studio-border text-zinc-300">Supabase</span>
+          </div>
+          <a href="https://library-topaz-five.vercel.app/" target="_blank" rel="noopener noreferrer"
+             class="text-xs font-semibold text-amber-400 hover:text-amber-300 inline-flex items-center gap-1">
+            Live Demo <span>&rarr;</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- Project 2: NoteNest -->
+      <article data-category="fullstack" class="project-card group rounded-2xl bg-studio-surface border border-studio-border hover:border-amber-500/50 transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-lg">
+        <div class="p-7 space-y-5">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <span class="inline-block font-mono text-[11px] uppercase tracking-wider text-amber-400 bg-amber-500/10 border border-amber-500/20 px-2.5 py-0.5 rounded-md mb-2">
+                Full-Stack &bull; Auth &amp; Security
+              </span>
+              <h3 class="text-2xl font-bold text-white group-hover:text-amber-400 transition-colors">NoteNest</h3>
+            </div>
+            <a href="https://secure-notes-rz17.vercel.app/login" target="_blank" rel="noopener noreferrer"
+               class="p-2.5 rounded-xl bg-studio-elevated border border-studio-border text-zinc-300 hover:text-amber-400 hover:border-amber-500/40 transition-colors"
+               title="Open Live Demo">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 3h7v7m0-7L10 14M5 5v14h14v-7"/></svg>
+            </a>
+          </div>
+
+          <p class="text-zinc-400 text-sm leading-relaxed">
+            An authenticated personal workspace allowing users to securely create, edit, and delete private notes behind protected routes.
+          </p>
+
+          <ul class="space-y-2 text-xs text-zinc-300">
+            <li class="flex items-center gap-2">
+              <span class="text-amber-500">&#9656;</span> End-to-end sign-up and login authentication gating unauthorized users
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-amber-500">&#9656;</span> Full CRUD note lifecycle backed by Supabase &amp; PostgreSQL
+            </li>
+          </ul>
+        </div>
+
+        <div class="px-7 py-5 bg-studio-elevated/60 border-t border-studio-border flex flex-wrap items-center justify-between gap-4">
+          <div class="flex flex-wrap gap-1.5 font-mono text-[11px]">
+            <span class="px-2.5 py-1 rounded bg-studio-bg border border-studio-border text-zinc-300">React</span>
+            <span class="px-2.5 py-1 rounded bg-studio-bg border border-studio-border text-zinc-300">TypeScript</span>
+            <span class="px-2.5 py-1 rounded bg-studio-bg border border-studio-border text-zinc-300">PostgreSQL</span>
+            <span class="px-2.5 py-1 rounded bg-studio-bg border border-studio-border text-zinc-300">Supabase</span>
+          </div>
+          <a href="https://secure-notes-rz17.vercel.app/login" target="_blank" rel="noopener noreferrer"
+             class="text-xs font-semibold text-amber-400 hover:text-amber-300 inline-flex items-center gap-1">
+            Live Demo <span>&rarr;</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- Project 3: Tag Cleaner -->
+      <article data-category="frontend" class="project-card group rounded-2xl bg-studio-surface border border-studio-border hover:border-amber-500/50 transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-lg">
+        <div class="p-7 space-y-5">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <span class="inline-block font-mono text-[11px] uppercase tracking-wider text-sky-400 bg-sky-500/10 border border-sky-500/20 px-2.5 py-0.5 rounded-md mb-2">
+                Next.js Utility Tool
+              </span>
+              <h3 class="text-2xl font-bold text-white group-hover:text-amber-400 transition-colors">Tag Cleaner</h3>
+            </div>
+            <a href="https://my-next-app-three-xi.vercel.app/tags" target="_blank" rel="noopener noreferrer"
+               class="p-2.5 rounded-xl bg-studio-elevated border border-studio-border text-zinc-300 hover:text-amber-400 hover:border-amber-500/40 transition-colors"
+               title="Open Live Demo">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 3h7v7m0-7L10 14M5 5v14h14v-7"/></svg>
+            </a>
+          </div>
+
+          <p class="text-zinc-400 text-sm leading-relaxed">
+            A productivity text-processing utility that parses raw, messy tag inputs and formats them into clean, deduplicated, orderly lists.
+          </p>
+
+          <ul class="space-y-2 text-xs text-zinc-300">
+            <li class="flex items-center gap-2">
+              <span class="text-amber-500">&#9656;</span> Automated string sanitization, delimiter parsing, and structured output
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-amber-500">&#9656;</span> Built with Next.js App Router and strict TypeScript typing
+            </li>
+          </ul>
+        </div>
+
+        <div class="px-7 py-5 bg-studio-elevated/60 border-t border-studio-border flex flex-wrap items-center justify-between gap-4">
+          <div class="flex flex-wrap gap-1.5 font-mono text-[11px]">
+            <span class="px-2.5 py-1 rounded bg-studio-bg border border-studio-border text-zinc-300">Next.js</span>
+            <span class="px-2.5 py-1 rounded bg-studio-bg border border-studio-border text-zinc-300">React</span>
+            <span class="px-2.5 py-1 rounded bg-studio-bg border border-studio-border text-zinc-300">TypeScript</span>
+          </div>
+          <a href="https://my-next-app-three-xi.vercel.app/tags" target="_blank" rel="noopener noreferrer"
+             class="text-xs font-semibold text-amber-400 hover:text-amber-300 inline-flex items-center gap-1">
+            Live Demo <span>&rarr;</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- Project 4: Weather App -->
+      <article data-category="frontend" class="project-card group rounded-2xl bg-studio-surface border border-studio-border hover:border-amber-500/50 transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-lg">
+        <div class="p-7 space-y-5">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <span class="inline-block font-mono text-[11px] uppercase tracking-wider text-sky-400 bg-sky-500/10 border border-sky-500/20 px-2.5 py-0.5 rounded-md mb-2">
+                API Integration &bull; SPA
+              </span>
+              <h3 class="text-2xl font-bold text-white group-hover:text-amber-400 transition-colors">Weather Forecast App</h3>
+            </div>
+            <a href="https://weather-neon-psi.vercel.app/" target="_blank" rel="noopener noreferrer"
+               class="p-2.5 rounded-xl bg-studio-elevated border border-studio-border text-zinc-300 hover:text-amber-400 hover:border-amber-500/40 transition-colors"
+               title="Open Live Demo">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 3h7v7m0-7L10 14M5 5v14h14v-7"/></svg>
+            </a>
+          </div>
+
+          <p class="text-zinc-400 text-sm leading-relaxed">
+            A fast single-page weather application providing real-time meteorological forecasts for any searched city worldwide.
+          </p>
+
+          <ul class="space-y-2 text-xs text-zinc-300">
+            <li class="flex items-center gap-2">
+              <span class="text-amber-500">&#9656;</span> Instant city lookup with asynchronous weather API data fetching
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-amber-500">&#9656;</span> Bundled with Vite for sub-second load times and deployed on Vercel
+            </li>
+          </ul>
+        </div>
+
+        <div class="px-7 py-5 bg-studio-elevated/60 border-t border-studio-border flex flex-wrap items-center justify-between gap-4">
+          <div class="flex flex-wrap gap-1.5 font-mono text-[11px]">
+            <span class="px-2.5 py-1 rounded bg-studio-bg border border-studio-border text-zinc-300">Vite</span>
+            <span class="px-2.5 py-1 rounded bg-studio-bg border border-studio-border text-zinc-300">React</span>
+            <span class="px-2.5 py-1 rounded bg-studio-bg border border-studio-border text-zinc-300">TypeScript</span>
+            <span class="px-2.5 py-1 rounded bg-studio-bg border border-studio-border text-zinc-300">Vercel</span>
+          </div>
+          <a href="https://weather-neon-psi.vercel.app/" target="_blank" rel="noopener noreferrer"
+             class="text-xs font-semibold text-amber-400 hover:text-amber-300 inline-flex items-center gap-1">
+            Live Demo <span>&rarr;</span>
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Tech Stack Section -->
+  <section id="stack" class="py-20 border-t border-studio-border/60 bg-studio-surface/40">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="mb-12">
+        <p class="font-mono text-xs uppercase tracking-widest text-amber-500 mb-2">Core Competencies</p>
+        <h2 class="text-3xl font-bold text-white tracking-tight">Technical Stack</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-studio-surface border border-studio-border space-y-4">
+          <h3 class="font-mono text-sm font-semibold text-amber-400">01 / Frontend Engineering</h3>
+          <p class="text-xs text-zinc-400 leading-relaxed">Building type-safe, component-driven interfaces with modern build tooling.</p>
+          <div class="flex flex-wrap gap-2 pt-1 font-mono text-xs">
+            <span class="px-3 py-1.5 rounded-lg bg-studio-elevated border border-studio-border text-zinc-200">React</span>
+            <span class="px-3 py-1.5 rounded-lg bg-studio-elevated border border-studio-border text-zinc-200">TypeScript</span>
+            <span class="px-3 py-1.5 rounded-lg bg-studio-elevated border border-studio-border text-zinc-200">Next.js</span>
+            <span class="px-3 py-1.5 rounded-lg bg-studio-elevated border border-studio-border text-zinc-200">Vite</span>
+            <span class="px-3 py-1.5 rounded-lg bg-studio-elevated border border-studio-border text-zinc-200">Tailwind CSS</span>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-studio-surface border border-studio-border space-y-4">
+          <h3 class="font-mono text-sm font-semibold text-amber-400">02 / Backend &amp; Databases</h3>
+          <p class="text-xs text-zinc-400 leading-relaxed">Structuring relational schemas, row-level security, and user authentication.</p>
+          <div class="flex flex-wrap gap-2 pt-1 font-mono text-xs">
+            <span class="px-3 py-1.5 rounded-lg bg-studio-elevated border border-studio-border text-zinc-200">PostgreSQL</span>
+            <span class="px-3 py-1.5 rounded-lg bg-studio-elevated border border-studio-border text-zinc-200">Supabase</span>
+            <span class="px-3 py-1.5 rounded-lg bg-studio-elevated border border-studio-border text-zinc-200">REST APIs</span>
+            <span class="px-3 py-1.5 rounded-lg bg-studio-elevated border border-studio-border text-zinc-200">Auth &amp; Sessions</span>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-studio-surface border border-studio-border space-y-4">
+          <h3 class="font-mono text-sm font-semibold text-amber-400">03 / Workflow &amp; Deployment</h3>
+          <p class="text-xs text-zinc-400 leading-relaxed">Version control, CI/CD previews, and cloud edge hosting.</p>
+          <div class="flex flex-wrap gap-2 pt-1 font-mono text-xs">
+            <span class="px-3 py-1.5 rounded-lg bg-studio-elevated border border-studio-border text-zinc-200">Git &amp; GitHub</span>
+            <span class="px-3 py-1.5 rounded-lg bg-studio-elevated border border-studio-border text-zinc-200">Vercel</span>
+            <span class="px-3 py-1.5 rounded-lg bg-studio-elevated border border-studio-border text-zinc-200">Docker</span>
+            <span class="px-3 py-1.5 rounded-lg bg-studio-elevated border border-studio-border text-zinc-200">System Design</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 md:py-24 border-t border-studio-border/60">
+    <div class="max-w-4xl mx-auto px-6 text-center space-y-8">
+      <div class="space-y-3">
+        <p class="font-mono text-xs uppercase tracking-widest text-amber-500">Get In Touch</p>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Let's Build Something Together</h2>
+        <p class="text-zinc-400 max-w-xl mx-auto text-sm sm:text-base">
+          I am actively open to junior and mid-level software engineering opportunities, internships, and collaborative builds. Reach out directly via email or connect on LinkedIn.
+        </p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="mailto:abdulsalammudasiru2021@gmail.com"
+           class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-amber-600 hover:bg-amber-500 text-zinc-950 font-semibold text-sm transition-colors inline-flex items-center justify-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          abdulsalammudasiru2021@gmail.com
+        </a>
+
+        <button id="copy-email-btn" type="button"
+                class="w-full sm:w-auto px-5 py-3.5 rounded-xl bg-studio-elevated hover:bg-zinc-800 border border-studio-border text-zinc-200 font-medium text-sm transition-colors inline-flex items-center justify-center gap-2">
+          <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+          <span id="copy-email-text">Copy Email</span>
+        </button>
+      </div>
+
+      <div class="pt-6 flex items-center justify-center gap-6 text-sm text-zinc-400">
+        <a href="https://github.com/tosvn" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 transition-colors">GitHub (@tosvn)</a>
+        <span>&bull;</span>
+        <a href="https://www.linkedin.com/in/abdulsalam-mudasiru-32529531a/" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 transition-colors">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-studio-border/60 py-8 text-center text-xs text-zinc-500">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>&copy; 2026 Abdulsalam Mudasiru. All rights reserved.</p>
+      <p class="font-mono">Built with HTML, Tailwind CSS &amp; Vanilla JS</p>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 translate-y-20 opacity-0 pointer-events-none transition-all duration-300 px-4 py-3 rounded-xl bg-studio-elevated border border-amber-500/40 text-zinc-100 text-xs font-medium shadow-xl flex items-center gap-2">
+    <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+    Email copied to clipboard!
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
