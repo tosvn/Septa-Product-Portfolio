@@ -10,10 +10,16 @@ portfolio/
 ├── styles.css          # Custom scrollbar & card hover styles
 ├── script.js           # Project category filtering & clipboard toast
 ├── assets/
-│   └── profile.png     # Your studio headshot
+│   ├── profile.png     # Studio headshot
+│   ├── booknest.png    # BookNest screenshot
+│   ├── notenest.png    # NoteNest screenshot
+│   ├── tag-cleaner.png # Tag Cleaner screenshot
+│   └── weather-app.png # Weather app screenshot
 └── README.md           # Setup & deployment instructions
 ```
 
 ## Quick Start & Deployment
 
 **Local Preview:** Open `index.html` directly in any browser, or run a local server (`npx serve .` or VS Code Live Server).
+
+**Deploy:** Push the portfolio folder to GitHub, then import it into Vercel or enable GitHub Pages. No build step is required.
