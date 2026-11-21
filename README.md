@@ -16,7 +16,4 @@ portfolio/
 
 ## Quick Start & Deployment
 
-1. **Local Preview:** Open `index.html` directly in any browser, or run a local server (`npx serve .` or VS Code Live Server).
-2. **Deploy to Vercel / GitHub Pages:**
-   - Push the contents of the `portfolio/` folder to a GitHub repository.
-   - Import the repository into [Vercel](https://vercel.com) or enable GitHub Pages in repository settings—no build step required.
+**Local Preview:** Open `index.html` directly in any browser, or run a local server (`npx serve .` or VS Code Live Server).
